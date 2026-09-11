@@ -1,0 +1,149 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Madhesh Fresh Eggs | Farm to Home</title>
+<meta name="description" content="Order fresh poultry eggs for delivery across Madhesh Province, Nepal.">
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+<header class="nav">
+  <a class="logo" href="#home"><span class="logo-egg">🥚</span><span><b>Madhesh Fresh</b><small>Farm • Eggs • Home</small></span></a>
+  <nav>
+    <a href="#home">Home</a><a href="#shop">Shop</a><a href="#how">How it works</a><a href="#orders">My Orders</a>
+    <button id="creatorOpen" class="creator-link">Creator</button>
+  </nav>
+  <button id="menuBtn" class="menu-btn">☰</button>
+</header>
+
+<main>
+<section id="home" class="hero">
+  <div class="hero-copy">
+    <div class="pill">🇳🇵 Madhesh Province • Nepal</div>
+    <h1>Fresh eggs from <span>our farm</span> to your home.</h1>
+    <p>Choose your egg size, set your quantity, select your Madhesh delivery place, and order in a few minutes.</p>
+    <div class="hero-actions"><a href="#shop" class="btn primary">Shop fresh eggs <span>→</span></a><a href="#how" class="btn soft">How it works</a></div>
+    <div class="trust"><span>🌱 Farm fresh</span><span>🚚 1–3 day delivery</span><span>📍 Madhesh only</span></div>
+  </div>
+  <div class="hero-card">
+    <div class="hero-image"><div class="sun"></div><div class="chicken">🐔</div><div class="egg-basket">🥚 🥚<br>🥚 🥚 🥚</div></div>
+    <div class="hero-card-bottom"><span><b id="heroPrice">Rs. 18</b> / egg</span><span class="live">● LIVE RATE</span></div>
+  </div>
+</section>
+
+<section class="stats">
+  <div><b>8</b><span>Districts</span></div>
+  <div><b>136</b><span>Local levels</span></div>
+  <div><b>3</b><span>Egg sizes</span></div>
+  <div><b>1–3</b><span>Days delivery</span></div>
+</section>
+
+<section id="shop" class="section">
+  <div class="section-head"><div><span class="eyebrow">Today's rates</span><h2>Pick your eggs</h2></div><div class="date-box">📅 <span id="today"></span></div></div>
+  <div id="productGrid" class="products"></div>
+</section>
+
+<section class="order-layout">
+  <section class="order-card">
+    <div class="section-head"><div><span class="eyebrow">Checkout</span><h2>Build your order</h2></div><span class="step">1 / 2</span></div>
+    <form id="orderForm">
+      <div class="selected-product">
+        <div class="product-mini" id="selectedIcon">🥚</div>
+        <div><small>Selected egg</small><strong id="selectedName">Medium</strong></div>
+        <div class="selected-price" id="selectedPrice">Rs. 18</div>
+      </div>
+      <div class="qty-row">
+        <label>Quantity <small>minimum 6 eggs</small></label>
+        <div class="qty"><button type="button" id="minus">−</button><input id="quantity" type="number" min="6" step="6" value="12"><button type="button" id="plus">+</button></div>
+      </div>
+      <div class="delivery-options">
+        <label class="choice active"><input type="radio" name="delivery" value="next" checked><span>🚚 <b>Next day</b><small>Best for nearby areas</small></span></label>
+        <label class="choice"><input type="radio" name="delivery" value="3days"><span>📦 <b>Within 3 days</b><small>For farther locations</small></span></label>
+      </div>
+      <div class="form-grid">
+        <label>Full name<input id="name" required placeholder="Your name"></label>
+        <label>Phone<input id="phone" required inputmode="numeric" placeholder="98XXXXXXXX"></label>
+        <label>District
+          <select id="district" required><option value="">Choose Madhesh district</option>
+            <option>Saptari</option><option>Siraha</option><option>Dhanusha</option><option>Mahottari</option>
+            <option>Sarlahi</option><option>Rautahat</option><option>Bara</option><option>Parsa</option>
+          </select>
+        </label>
+        <label>Local level / municipality
+          <input id="localLevel" list="places" required placeholder="e.g. Rajbiraj Municipality">
+          <datalist id="places">
+            <option>Rajbiraj Municipality</option><option>Lahan Municipality</option><option>Siraha Municipality</option>
+            <option>Janakpur Sub-Metropolitan City</option><option>Jaleshwar Municipality</option><option>Bardibas Municipality</option>
+            <option>Malangwa Municipality</option><option>Hariwan Municipality</option><option>Chandrapur Municipality</option>
+            <option>Gaur Municipality</option><option>Kalaiya Sub-Metropolitan City</option><option>Jitpur-Simara Sub-Metropolitan City</option>
+            <option>Birgunj Metropolitan City</option>
+          </datalist>
+        </label>
+        <label class="full">Ward / Tole / Street / Landmark<textarea id="address" required placeholder="Ward no., Tole, street, nearby landmark..."></textarea></label>
+        <label class="full">Instagram ID (username only)<input id="instagram" placeholder="@yourusername"><small>Never enter your Instagram password.</small></label>
+      </div>
+      <div id="formError" class="error hidden"></div>
+      <div class="summary"><div><span>Subtotal</span><b id="subtotal">Rs. 216</b></div><div><span>Delivery</span><b id="deliveryFee">Rs. 0</b></div><div class="grand"><span>Total</span><b id="total">Rs. 216</b></div></div>
+      <button class="btn primary full-btn" type="submit">Place egg order <span>→</span></button>
+    </form>
+  </section>
+  <aside class="location-card">
+    <div class="map-top"><span class="pin">📍</span><div><span class="eyebrow">Delivery zone</span><h3>Madhesh Province</h3></div></div>
+    <div class="map-art"><div class="nepal">NEPAL</div><div class="madhesh-strip">MADHESH</div><div class="map-pin p1">📍</div><div class="map-pin p2">📍</div><div class="map-pin p3">📍</div></div>
+    <p>We currently accept delivery addresses inside Madhesh Province only.</p>
+    <div class="districts">
+      <span>Saptari</span><span>Siraha</span><span>Dhanusha</span><span>Mahottari</span>
+      <span>Sarlahi</span><span>Rautahat</span><span>Bara</span><span>Parsa</span>
+    </div>
+    <small>District and local-level names are based on Government of Nepal local-level listings.</small>
+  </aside>
+</section>
+
+<section id="how" class="section how">
+  <div class="section-head"><div><span class="eyebrow">Simple process</span><h2>From click to carton</h2></div></div>
+  <div class="steps"><article><i>01</i><h3>Choose size</h3><p>Small, Medium or Large. The creator can update each price.</p></article><article><i>02</i><h3>Enter location</h3><p>Select one of the eight Madhesh districts and provide the delivery details.</p></article><article><i>03</i><h3>Place order</h3><p>Get an order number and an estimated next-day or 3-day delivery window.</p></article></div>
+</section>
+
+<section id="orders" class="section orders-section">
+  <div class="section-head"><div><span class="eyebrow">Customer area</span><h2>My orders</h2></div></div>
+  <div id="ordersList" class="orders-list"><div class="empty">No orders on this browser yet. Place your first egg order above. 🥚</div></div>
+</section>
+
+<section class="visual-reference">
+  <div><span class="eyebrow">Farm story</span><h2>Good eggs start with good care.</h2><p>A warm, modern farm identity inspired by the earlier FreshNest design, but rebuilt around a Nepal-specific shopping flow and creator price controls.</p></div>
+  <img src="images/farm-visual.png" alt="Farm and egg shop visual reference">
+</section>
+</main>
+
+<footer><b>🥚 Madhesh Fresh</b><span>Fresh eggs • Madhesh Province, Nepal</span><small>Prototype storefront. A real multi-device shop needs a secure backend/database.</small></footer>
+
+<div id="creatorModal" class="modal hidden">
+  <div class="modal-box creator-box">
+    <button class="close" data-close="creatorModal">×</button>
+    <div id="creatorLogin">
+      <span class="eyebrow">Private area</span><h2>Creator dashboard</h2>
+      <p>Set today's egg prices and manage the storefront. Demo PIN: <b>2580</b></p>
+      <input id="creatorPin" type="password" inputmode="numeric" maxlength="8" placeholder="Creator PIN">
+      <button id="creatorLoginBtn" class="btn primary">Open dashboard</button>
+      <div id="pinError" class="error hidden"></div>
+    </div>
+    <div id="creatorDash" class="hidden">
+      <div class="creator-head"><div><span class="eyebrow">Creator control</span><h2>Store settings</h2></div><button id="creatorLogout" class="ghost">Lock</button></div>
+      <div class="admin-grid">
+        <label>Small price (Rs./egg)<input id="priceSmall" type="number" min="0" step=".5"></label>
+        <label>Medium price (Rs./egg)<input id="priceMedium" type="number" min="0" step=".5"></label>
+        <label>Large price (Rs./egg)<input id="priceLarge" type="number" min="0" step=".5"></label>
+        <label>Delivery fee (Rs.)<input id="priceDelivery" type="number" min="0" step="1"></label>
+      </div>
+      <div class="admin-actions"><button id="savePrices" class="btn primary">Save today's rates</button><button id="resetPrices" class="ghost">Reset demo rates</button></div>
+      <div class="admin-summary"><span>Orders stored on this browser: <b id="adminOrderCount">0</b></span><button id="clearOrders" class="danger">Clear local orders</button></div>
+      <p class="admin-note">Important: this dashboard uses browser storage only. It is a prototype, not secure admin authentication. For real customers on different devices, connect this UI to a server/database.</p>
+    </div>
+  </div>
+</div>
+<div id="successModal" class="modal hidden"><div class="modal-box success-box"><div class="success-icon">✓</div><span class="eyebrow">Order received</span><h2>Order placed!</h2><p id="successText"></p><button class="btn primary" data-close="successModal">Done</button></div></div>
+
+<script src="app.js"></script>
+</body>
+</html>
